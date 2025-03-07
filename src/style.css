@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+#navcontainer {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+#navlinkscontainer {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  gap: 5px;
+  margin-top: 30px;
+}
+.logo {
+  width: 50px;
+}
