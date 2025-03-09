@@ -1,5 +1,6 @@
 import "./css/style.css";
 import "./css/general.css";
+import "./css/queries.css";
 // import { home } from "./home.js";
 // import { menu } from "./menu.js";
 // import { about } from "./about.js";
