@@ -55,3 +55,124 @@
     padding: 9.6rem 3.2rem;
   }
 }
+
+/* ******************** */
+/* BELOW 944 (tablets)*/
+/* ******************** */
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE MENU */
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.5s ease-in;
+
+    /* HIDE THE NAVIGATION */
+
+    /* This don't allow transition*/
+    /* display: none; */
+
+    /* Allow transition */
+    /* This allow transition */
+    /* (1) Hid it visually */
+    opacity: 0;
+    /* (2) Make it unaccessible to keyboards and mouse pointers*/
+    pointer-events: none;
+    /* (3) Hide it from screen readers*/
+    visibility: hidden;
+  }
+
+  /* Apply the styles to element which has main-nav class AND its parent element has nav-open class */
+  .nav-open .main-nav {
+    /* it's like say header nave */
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu"] {
+    display: none;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}

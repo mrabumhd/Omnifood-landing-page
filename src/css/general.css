@@ -52,10 +52,12 @@ default:9px
 }
 
 html {
+  overflow-x: hidden;
   font-size: 62.5%;
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
