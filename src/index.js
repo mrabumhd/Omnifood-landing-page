@@ -1,20 +1,44 @@
 import "./css/style.css";
 import "./css/general.css";
 import "./css/queries.css";
-// import { home } from "./home.js";
-// import { menu } from "./menu.js";
-// import { about } from "./about.js";
-// import { contact } from "./contact.js";
 
-// const homeBtn = document.querySelector("#home");
-// const menuBtn = document.querySelector("#menu");
-// const aboutBtn = document.querySelector("#about");
-// const contactBtn = document.querySelector("#contact");
+// Set current year
+const yearEl = document.querySelector(".copy-year");
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
 
-// home();
-// homeBtn.addEventListener("click", home);
-// menuBtn.addEventListener("click", menu);
-// aboutBtn.addEventListener("click", about);
-// contactBtn.addEventListener("click", contact);
+// Make mobile navigation work
+const headerEl = document.querySelector(".header");
+const btnNavEl = document.querySelector(".btn-mobile-nav");
 
-console.log("Hello there!");
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+// Smooth Scrolling animation
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    // Scroll back to top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close mobile naviagtion
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
+  });
+});

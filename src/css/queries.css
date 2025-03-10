@@ -117,6 +117,7 @@
   /* MOBILE MENU */
 
   .btn-mobile-nav {
+    z-index: 1000;
     display: block;
   }
 
